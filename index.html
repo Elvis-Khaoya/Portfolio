@@ -8,10 +8,10 @@
 <body>
     <nav>
         <ul>
-            <li><a href="index.html">About Me</a></li>
-            <li><a href="projects.html">Projects</a></li>
-            <li><a href="tools.html">Tools</a></li>
-            <li><a href="contact.html">Contact</a></li>
+            <li><a href="#about">About Me</a></li>
+            <li><a href="#projects">Projects</a></li>
+            <li><a href="#tools">Tools</a></li>
+            <li><a href="#contact">Contact</a></li>
             <button id="dark-mode-toggle" onclick="toggleDarkMode()">Toggle Dark Mode</button>
         </ul>
         
@@ -21,7 +21,7 @@
         <h2>Junior Pentester & Ethical Hacker</h2>
     </header>
     <main>
-        <section>
+        <section id="about">
             <h3>About Me</h3>
              <img src="profile.jpg" alt="" class="profile-photo">
             <p>
@@ -37,7 +37,70 @@
                 Explore my projects and tools to see my work!
             </p>
         </section>
+
+       
+    
+        <section id="projects">
+             
+            <h3>Security Projects & Writeups</h3>
+            <ul>
+                <li>
+                    <button class="collapsible">Show Details</button>
+                    <div class="collapsible-content" style="display:none;">
+                        <h4>Vulnerable Web App Assessment</h4>
+                        <p>Performed penetration testing on DVWA, documented findings, and proposed remediations.</p>
+                        <a href="https://github.com/Elvis-Khaoya/DVWA-Writeup" target="_blank">Read Writeup</a>
+                    </div>
+                </li>
+                <li>
+                    <button class="collapsible">Show Details</button>
+                    <div class="collapsible-content" style="display:none;">
+                        <h4>CTF Challenges</h4>
+                        <p>Participated in HackTheBox and TryHackMe challenges; solved web and network pentesting labs.</p>
+                    </div>
+                </li>
+                <!-- Add more projects as you build them -->
+            </ul>
+        </section>
+
+        
+    
+        <section id="tools">
+            
+            <h3>Tools I Use</h3>
+            <ul>
+                <li><strong>Burp Suite:</strong> Intercepting proxy for web vulnerability scanning.</li>
+                <li><strong>Nmap:</strong> Network scanner and port enumeration.</li>
+                <li><strong>Metasploit:</strong> Exploitation framework for penetration testing.</li>
+                <li><strong>Wireshark:</strong> Network protocol analyzer.</li>
+                <!-- Add more tools -->
+            </ul>
+        </section>
+        
+         
+        <section id="contact">
+            
+            <h3>Get in Touch</h3>
+            <form id="contact-form" action="#" method="post">
+    <label for="name">Name:</label>
+    <input type="text" id="name" name="name" placeholder="Your full name" required>
+
+    <label for="email">Email:</label>
+    <input type="email" id="email" name="email" placeholder="your@email.com" required>
+
+    <label for="message">Message:</label>
+    <textarea id="message" name="message" rows="5" placeholder="Type your message here..." required></textarea>
+
+    <button type="submit" id="send-btn">📧 Send Message</button>
+</form>
+            <!-- You can add more contact info below -->
+            <p>Email: <a href="mailto:elviskhaoya@gmail.com">elviskhaoya@gmail.com</a></p>
+            <p>LinkedIn: <a href="https://linkedin.com/in/Elvis Khaoya" target="_blank">Elvis Khaoya</a></p>
+            <p>GitHub: <a href="https://github.com/Elvis-Khaoya" target="_blank">Elvis-Khaoya</a></p>
+        </section>
+
     </main>
+
     <footer>
         &copy; <span id="year"></span> Elvis Khaoya
     </footer>

@@ -321,3 +321,150 @@ body.dark-mode .nav-links li a[aria-current="page"] {
     background: rgba(29,225,11,0.12);
     color: #fff;
 }
+/* ===== BLOG SECTION ===== */
+.blog-container {
+  display: flex;
+  flex-direction: column;
+  gap: 22px;
+}
+
+.blog-post {
+  background: #fafafa;
+  border-radius: 10px;
+  padding: 18px 20px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.06);
+  border: 1px solid rgba(0,0,0,0.05);
+}
+
+.blog-title {
+  margin: 0 0 6px 0;
+  color: #222;
+}
+
+.blog-date {
+  font-size: 0.9em;
+  color: #777;
+  margin-bottom: 10px;
+}
+
+.blog-snippet {
+  color: #333;
+  line-height: 1.6;
+}
+
+.read-more {
+  margin-top: 10px;
+  background: #1de10b;
+  color: #222;
+  border: none;
+  border-radius: 6px;
+  padding: 8px 14px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background 0.2s, color 0.2s;
+}
+
+.read-more:hover {
+  background: #222;
+  color: #1de10b;
+}
+
+.blog-full-content {
+  display: none;
+  margin-top: 12px;
+  line-height: 1.6;
+}
+
+/* DARK MODE SUPPORT */
+body.dark-mode .blog-post {
+  background: #222;
+  border-color: rgba(29,225,11,0.15);
+  color: #1de10b;
+}
+
+body.dark-mode .blog-snippet,
+body.dark-mode .blog-date,
+body.dark-mode .blog-title {
+  color: #bfe7b6;
+}
+
+body.dark-mode .read-more {
+  background: #333;
+  color: #1de10b;
+}
+
+body.dark-mode .read-more:hover {
+  background: #1de10b;
+  color: #222;
+}
+/* ===== CERTIFICATIONS SECTION ===== */
+.cert-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 20px;
+}
+
+.cert-item {
+  background: #fafafa;
+  border-radius: 10px;
+  padding: 18px 20px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.06);
+  border: 1px solid rgba(0,0,0,0.05);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.cert-item:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 6px 16px rgba(0,0,0,0.08);
+}
+
+.cert-item h4 {
+  margin-bottom: 6px;
+  color: #222;
+}
+
+.cert-item p {
+  font-size: 0.95em;
+  color: #555;
+  margin-bottom: 10px;
+}
+
+.cert-link {
+  display: inline-block;
+  background: #1de10b;
+  color: #222;
+  font-weight: bold;
+  text-decoration: none;
+  padding: 6px 12px;
+  border-radius: 6px;
+  transition: background 0.2s, color 0.2s;
+}
+
+.cert-link:hover {
+  background: #222;
+  color: #1de10b;
+}
+
+/* DARK MODE SUPPORT */
+body.dark-mode .cert-item {
+  background: #222;
+  border-color: rgba(29,225,11,0.15);
+  color: #1de10b;
+}
+
+body.dark-mode .cert-item p {
+  color: #bfe7b6;
+}
+body.dark-mode .cert-item h4 {
+  color: #1de10b;
+}
+
+body.dark-mode .cert-link {
+  background: #333;
+  color: #1de10b;
+}
+
+body.dark-mode .cert-link:hover {
+  background: #1de10b;
+  color: #222;
+}

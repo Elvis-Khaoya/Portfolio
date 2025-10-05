@@ -468,3 +468,22 @@ body.dark-mode .cert-link:hover {
   background: #1de10b;
   color: #222;
 }
+/* ===== DARK MODE TOGGLE ICON ===== */
+#dark-mode-toggle {
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  font-size: 1.5em;
+  padding: 6px 10px;
+  transition: transform 0.2s ease, color 0.2s ease;
+  color: #ffd700; /* gold for light mode */
+}
+
+#dark-mode-toggle:hover {
+  transform: rotate(20deg);
+}
+
+/* Icon color in dark mode */
+body.dark-mode #dark-mode-toggle {
+  color: #1de10b;
+}

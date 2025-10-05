@@ -82,3 +82,28 @@ function toggleBlogContent(button) {
     button.textContent = "Read Less";
   }
 }
+function toggleDarkMode() {
+  document.body.classList.toggle('dark-mode');
+  
+  const icon = document.getElementById('dark-mode-icon');
+  if (document.body.classList.contains('dark-mode')) {
+    localStorage.setItem('theme', 'dark');
+    icon.textContent = "☀️"; // Sun for light mode
+  } else {
+    localStorage.setItem('theme', 'light');
+    icon.textContent = "🌙"; // Moon for dark mode
+  }
+}
+
+window.onload = function() {
+  if (localStorage.getItem('theme') === 'dark') {
+    document.body.classList.add('dark-mode');
+    const icon = document.getElementById('dark-mode-icon');
+    if (icon) icon.textContent = "☀️";
+  } else {
+    const icon = document.getElementById('dark-mode-icon');
+    if (icon) icon.textContent = "🌙";
+  }
+
+  // (keep your other window.onload code — footer year, collapsibles, etc.)
+};

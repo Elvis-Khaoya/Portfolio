@@ -42,34 +42,40 @@ window.onload = function() {
     });
 
     // Contact form validation
-    const contactForm = document.getElementById('contact-form');
-    if (contactForm) {
-        contactForm.addEventListener('submit', function(e) {
-            const name = document.getElementById('name').value.trim();
-            const email = document.getElementById('email').value.trim();
-            const message = document.getElementById('message').value.trim();
-            let valid = true;
-            let errorMsg = "";
+// CONTACT FORM SUBMISSION TO BACKEND
+const contactForm = document.getElementById('contact-form');
+if (contactForm) {
+  contactForm.addEventListener('submit', async function (e) {
+    e.preventDefault();
 
-            if (name.length < 2) {
-                valid = false;
-                errorMsg += "Name must be at least 2 characters.\n";
-            }
-            if (!email.match(/^[^\s@]+@[^\s@]+\.[^\s@]+$/)) {
-                valid = false;
-                errorMsg += "Provide a valid email address.\n";
-            }
-            if (message.length < 10) {
-                valid = false;
-                errorMsg += "Message must be at least 10 characters.\n";
-            }
+    const name = document.getElementById('name').value.trim();
+    const email = document.getElementById('email').value.trim();
+    const message = document.getElementById('message').value.trim();
 
-            if (!valid) {
-                alert(errorMsg);
-                e.preventDefault();
-            }
-        });
+    try {
+      const response = await fetch('http://127.0.0.1:5000/send-message', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json'
+        },
+        body: JSON.stringify({ name, email, message })
+      });
+
+      const result = await response.json();
+
+      if (result.status === "success") {
+        alert("✅ Message sent successfully!");
+        contactForm.reset();
+      } else {
+        alert("⚠️ Error: " + result.message);
+      }
+
+    } catch (error) {
+      alert("❌ Failed to send message. Backend may be offline.");
+      console.error(error);
     }
+  });
+}
 };
 // BLOG TOGGLE FUNCTIONALITY
 function toggleBlogContent(button) {

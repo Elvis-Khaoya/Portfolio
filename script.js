@@ -18,6 +18,16 @@ window.onload = function () {
         this.textContent = "Show Details";
       }
     });
+  // ===== MOBILE MENU TOGGLE =====
+const menuToggle = document.getElementById("menu-toggle");
+const navLinks = document.getElementById("nav-links");
+
+if (menuToggle && navLinks) {
+  menuToggle.addEventListener("click", () => {
+    navLinks.classList.toggle("show");
+  });
+}
+
   });
 
   // Contact form submission
@@ -64,3 +74,11 @@ function toggleBlogContent(button) {
     button.textContent = "Read Less";
   }
 }
+ // Mobile menu toggle
+  const menuToggle = document.getElementById("menu-toggle");
+  const navLinks = document.getElementById("nav-links");
+  if (menuToggle && navLinks) {
+    menuToggle.addEventListener("click", () => {
+      navLinks.classList.toggle("show");
+    });
+  }

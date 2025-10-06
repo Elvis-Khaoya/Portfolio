@@ -487,3 +487,38 @@ body.dark-mode .cert-link:hover {
 body.dark-mode #dark-mode-toggle {
   color: #1de10b;
 }
+/* 📱 Mobile Responsive Adjustments */
+@media (max-width: 768px) {
+  body {
+    font-size: 16px;
+  }
+
+  header, nav, footer {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .section {
+    padding: 20px;
+  }
+
+  .container {
+    width: 95%;
+  }
+
+  img {
+    max-width: 100%;
+    height: auto;
+  }
+
+  /* Example: Make grid or flex layouts stack vertically */
+  .skills, .education, .experience {
+    display: block;
+  }
+
+  .skill-card, .edu-card, .exp-card {
+    width: 100%;
+    margin-bottom: 15px;
+  }
+}
+

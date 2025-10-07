@@ -33,7 +33,7 @@ window.onload = function () {
 
       try {
         const response = await fetch(
-          "https://elvis-portfolio-backend.onrender.com/send-message",
+          "https://elvisportfolio.lovestoblog.com/send_message.php",
           {
             method: "POST",
             headers: { "Content-Type": "application/json" },

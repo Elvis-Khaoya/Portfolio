@@ -1,4 +1,11 @@
 <?php
+use PHPMailer\PHPMailer\PHPMailer;
+use PHPMailer\PHPMailer\Exception;
+require __DIR__ . '/config.php';
+require __DIR__ . '/PHPMailer/Exception.php';
+require __DIR__ . '/PHPMailer/PHPMailer.php';
+require __DIR__ . '/PHPMailer/SMTP.php';
+
 header("Access-Control-Allow-Origin: *");
 header("Content-Type: application/json");
 
@@ -14,26 +21,33 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
         exit;
     }
 
-    // Set recipient and subject
-    $to = "elviskhaoya@gmail.com";  // your email
-    $subject = "New Portfolio Message from $name";
+    $mail = new PHPMailer(true);
+    try {
+        // SMTP setup
+        $mail->isSMTP();
+        $mail->Host = 'smtp.gmail.com';
+        $mail->SMTPAuth = true;
+        $mail->Username = GMAIL_USER;
+        $mail->Password = GMAIL_PASS;   // replace with your Gmail app password
+        $mail->SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS;
+        $mail->Port = 587;
 
-    // Build the message
-    $body = "You have received a new message from your portfolio contact form:\n\n";
-    $body .= "Name: $name\n";
-    $body .= "Email: $email\n";
-    $body .= "Message:\n$message\n";
+        // From / To
+        $mail->setFrom(GMAIL_USER, SENDER_NAME);
+        $mail->addAddress(GMAIL_USER);// where to receive messages
+        $mail->addReplyTo($email, $name);
 
-    $headers = "From: $email\r\n" .
-               "Reply-To: $email\r\n" .
-               "Content-Type: text/plain; charset=UTF-8\r\n";
+        // Content
+        $mail->isHTML(false);
+        $mail->Subject = "New Portfolio Message from $name";
+        $mail->Body = "Name: $name\nEmail: $email\nMessage:\n$message";
 
-    if (mail($to, $subject, $body, $headers)) {
+        $mail->send();
         echo json_encode(["status" => "success", "message" => "Message sent successfully!"]);
-    } else {
-        echo json_encode(["status" => "error", "message" => "Failed to send message."]);
+    } catch (Exception $e) {
+        echo json_encode(["status" => "error", "message" => "Mailer Error: {$mail->ErrorInfo}"]);
     }
 } else {
-    echo json_encode(["status" => "error", "message" => "Invalid request."]);
+    echo json_encode(["status" => "error", "message" => "Invalid request"]);
 }
 ?>

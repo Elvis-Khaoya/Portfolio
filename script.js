@@ -18,15 +18,7 @@ window.onload = function () {
         this.textContent = "Show Details";
       }
     });
-  // ===== MOBILE MENU TOGGLE =====
-const menuToggle = document.getElementById("menu-toggle");
-const navLinks = document.getElementById("nav-links");
 
-if (menuToggle && navLinks) {
-  menuToggle.addEventListener("click", () => {
-    navLinks.classList.toggle("show");
-  });
-}
 
   });
 
@@ -74,11 +66,15 @@ function toggleBlogContent(button) {
     button.textContent = "Read Less";
   }
 }
- // Mobile menu toggle
+ 
+// ===== MOBILE MENU TOGGLE FIX =====
+document.addEventListener("DOMContentLoaded", () => {
   const menuToggle = document.getElementById("menu-toggle");
   const navLinks = document.getElementById("nav-links");
+
   if (menuToggle && navLinks) {
     menuToggle.addEventListener("click", () => {
       navLinks.classList.toggle("show");
     });
   }
+});

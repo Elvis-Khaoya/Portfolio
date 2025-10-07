@@ -35,6 +35,8 @@ nav {
   list-style: none;
   margin: 0;
   padding: 0;
+  overflow: hidden;
+  transition: max-height 0.3s ease-out;
 }
 
 .nav-links li a {
@@ -301,10 +303,15 @@ footer {
     width: 100%;
     margin-top: 10px;
     border-top: 1px solid rgba(29, 225, 11, 0.2);
+    transition: max-height 0.3s ease-out;
+    overflow: hidden;
+    max-height: 0%;
   }
 
   .nav-links.show {
     display: flex; /* show when toggled via JS */
+    flex-direction: column;
+    max-height: 500px; /* arbitrary large value to allow full expansion */
   }
 
   .nav-links li {
@@ -332,37 +339,6 @@ footer {
   }
 }
 
-
-
-
-/* ===== RESPONSIVENESS ===== */
-@media (max-width: 768px) {
-  main {
-    width: 92%;
-    padding: 15px;
-  }
-
-  header h1 {
-    font-size: 1.6rem;
-  }
-
-  header h2 {
-    font-size: 1rem;
-  }
-
-  .nav-links {
-    flex-direction: column;
-  }
-
-  .cert-container {
-    grid-template-columns: 1fr;
-  }
-
-  .profile-photo {
-    width: 120px;
-    height: 120px;
-  }
-}
 
 @media (max-width: 480px) {
   body {

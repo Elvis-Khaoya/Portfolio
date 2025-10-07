@@ -1,4 +1,11 @@
 <?php
+
+header("Access-Control-Allow-Origin: *");
+header("Content-Type: application/json; charset=UTF-8");
+
+file_put_contents(__DIR__ . '/mail_debug.log', "Script started at " . date('Y-m-d H:i:s') . "\n", FILE_APPEND);
+
+
 use PHPMailer\PHPMailer\PHPMailer;
 use PHPMailer\PHPMailer\Exception;
 require __DIR__ . '/config.php';
@@ -32,6 +39,11 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
         $mail->SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS;
         $mail->Port = 587;
 
+        $mail->SMTPDebug = 2; // 0 = off, 1 = client, 2 = client+server
+        $mail->Debugoutput = function($str, $level) {
+        file_put_contents(__DIR__ . '/mail_debug.log', "[" . date('Y-m-d H:i:s') . "] Level $level: $str\n", FILE_APPEND);
+    };
+
         // From / To
         $mail->setFrom(GMAIL_USER, SENDER_NAME);
         $mail->addAddress(GMAIL_USER);// where to receive messages
@@ -42,12 +54,25 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
         $mail->Subject = "New Portfolio Message from $name";
         $mail->Body = "Name: $name\nEmail: $email\nMessage:\n$message";
 
+        $mail->SMTPDebug = 2;
+        $mail->Debugoutput = 'error_log';
+
+        file_put_contents(__DIR__ . '/mail_debug.log', "Attempting to send email...\n", FILE_APPEND);
+
+
         $mail->send();
         echo json_encode(["status" => "success", "message" => "Message sent successfully!"]);
+        exit;
+
     } catch (Exception $e) {
-        echo json_encode(["status" => "error", "message" => "Mailer Error: {$mail->ErrorInfo}"]);
+        echo json_encode(["status" => "error", "message" => $mail->ErrorInfo]);
+        exit;
+
     }
 } else {
     echo json_encode(["status" => "error", "message" => "Invalid request"]);
 }
+
+file_put_contents(__DIR__ . '/mail_debug.log', "Email sent successfully!\n", FILE_APPEND);
+
 ?>

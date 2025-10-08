@@ -54,16 +54,19 @@ window.onload = function () {
 };
 
 // Blog read more/less
-function toggleBlogContent(button) {
-  const content = button.nextElementSibling;
-  if (content.style.display === "block") {
-    content.style.display = "none";
-    button.textContent = "Read More";
-  } else {
-    content.style.display = "block";
-    button.textContent = "Read Less";
-  }
-}
+// ===== BLOG READ MORE / LESS TOGGLE =====
+document.addEventListener("DOMContentLoaded", () => {
+  document.querySelectorAll(".read-more").forEach((button) => {
+    button.addEventListener("click", () => {
+      const content = button.nextElementSibling;
+      const isVisible = content.style.display === "block";
+
+      content.style.display = isVisible ? "none" : "block";
+      button.textContent = isVisible ? "Read More" : "Read Less";
+    });
+  });
+});
+
  
 // ===== MOBILE MENU TOGGLE FIX =====
 document.addEventListener("DOMContentLoaded", () => {

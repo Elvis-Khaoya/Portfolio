@@ -25,33 +25,31 @@ window.onload = function () {
   // Contact form submission
   const contactForm = document.getElementById("contact-form");
   if (contactForm) {
+    
     contactForm.addEventListener("submit", async function (e) {
-      e.preventDefault();
-      const name = document.getElementById("name").value.trim();
-      const email = document.getElementById("email").value.trim();
-      const message = document.getElementById("message").value.trim();
+  e.preventDefault();
 
-      try {
-        const response = await fetch(
-          "send_message.php",
-          {
-            method: "POST",
-            headers: { "Content-Type": "application/json" },
-            body: JSON.stringify({ name, email, message }),
-          }
-        );
-        const result = await response.json();
-        if (result.status === "success") {
-          alert("✅ Message sent successfully!");
-          contactForm.reset();
-        } else {
-          alert("⚠️ Error: " + result.message);
-        }
-      } catch (error) {
-        alert("❌ Failed to send message. Backend may be offline.");
-        console.error(error);
-      }
+  const formData = new FormData(contactForm);
+
+  try {
+    const response = await fetch("https://elvisportfolio.lovestoblog.com/send_message.php", {
+      method: "POST",
+      body: formData
     });
+
+    const result = await response.json();
+    if (result.status === "success") {
+      alert("✅ Message sent successfully!");
+      contactForm.reset();
+    } else {
+      alert("⚠️ Error: " + result.message);
+    }
+  } catch (error) {
+    alert("❌ Failed to send message. Backend may be offline.");
+    console.error(error);
+  }
+});
+
   }
 };
 

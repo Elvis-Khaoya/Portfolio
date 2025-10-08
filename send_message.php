@@ -17,11 +17,11 @@ header("Access-Control-Allow-Origin: *");
 header("Content-Type: application/json");
 
 if ($_SERVER["REQUEST_METHOD"] === "POST") {
-    $data = json_decode(file_get_contents("php://input"), true);
+   if ($_SERVER["REQUEST_METHOD"] === "POST") {
+    $name = trim($_POST["name"] ?? "");
+    $email = trim($_POST["email"] ?? "");
+    $message = trim($_POST["message"] ?? "");
 
-    $name = trim($data["name"] ?? "");
-    $email = trim($data["email"] ?? "");
-    $message = trim($data["message"] ?? "");
 
     if (empty($name) || empty($email) || empty($message)) {
         echo json_encode(["status" => "error", "message" => "All fields are required"]);

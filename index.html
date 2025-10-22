@@ -3,318 +3,405 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta http-equiv="Content-Security-Policy" 
-      content="default-src 'self'; script-src 'self'; style-src 'self' 'unsafe-inline'; img-src 'self' data:; connect-src 'self' https://elvis-portfolio-backend.onrender.com;">
-
   <title>Elvis Khaoya</title>
+  <script src="https://cdn.tailwindcss.com"></script>
   <link rel="stylesheet" href="style.css" />
 </head>
+<body class="bg-gray-900 text-white">
 
-<body class="dark-mode">
-  <nav>
-    <div class="nav-container">
-      <button class="menu-toggle" id="menu-toggle">☰</button>
-      <ul class="nav-links" id="nav-links">
-        <li><a href="#about">About Me</a></li>
-        <li><a href="#education">Education</a></li>
-        <li><a href="#certifications">Certifications</a></li>
-        <li><a href="#skills">Skills</a></li>
-        <li><a href="#experience">Experience</a></li>
-        <li><a href="#projects">Projects</a></li>
-        <li><a href="#tools">Tools</a></li>
-        <li><a href="#blog">Blog</a></li>
-        <li><a href="#contact">Contact</a></li>
+  <nav class="bg-gray-800 sticky top-0 shadow-md">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex justify-between h-16 items-center">
+        
+        <!-- Logo / Menu Button -->
+        <div class="flex items-center">
+          <button id="menu-toggle" class="md:hidden text-gray-300 hover:text-white focus:outline-none">
+            ☰
+          </button>
+          <span class="ml-3 text-lg font-semibold text-green-300">Elvis Khaoya</span>
+        </div>
+
+        <!-- Desktop Menu -->
+        <ul class="hidden md:flex space-x-6 font-semibold text-green-300">
+          <li><a href="#about" class="hover:text-white">About Me</a></li>
+          <li><a href="#education" class="hover:text-white">Education</a></li>
+          <li><a href="#certifications" class="hover:text-white">Certificates</a></li>
+          <li><a href="#skills" class="hover:text-white">Skills</a></li>
+          <li><a href="#projects" class="hover:text-white">Projects</a></li>
+          <li><a href="#contact" class="hover:text-white">Contact</a></li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- Mobile Menu -->
+    <div id="nav-links" class="hidden md:hidden bg-gray-700">
+      <ul class="flex flex-col space-y-2 px-4 py-3 text-gray-300">
+        <li><a href="#about" class="hover:text-white block">About Me</a></li>
+        <li><a href="#education" class="hover:text-white block">Education</a></li>
+        <li><a href="#certifications" class="hover:text-white block">Certificates</a></li>
+        <li><a href="#skills" class="hover:text-white block">Skills</a></li>
+        <li><a href="#projects" class="hover:text-white block">Projects</a></li>
+        <li><a href="#contact" class="hover:text-white block">Contact</a></li>
       </ul>
     </div>
   </nav>
-
-  <header>
-    <h1>Elvis Khaoya</h1>
-    <h2>IT Support | Ethical Hacker | Aspiring Cybersecurity Analyst</h2>
-  </header>
-
-  <main>
+   <!-- Header -->
+ 
+   <!-- About Section -->
+  <main class="max-w-5xl mx-auto px-6 py-12">
     <section id="about">
-      <h3>About Me</h3>
-      <img src="elvis.jpg" alt="Elvis Khaoya" class="profile-photo" />
-  <p>
-    I’m <strong>Elvis Wanyonyi Khaoya</strong>, a dedicated <strong>IT Support Technician</strong> and
-    <strong>Cybersecurity Enthusiast</strong> based in Nairobi, Kenya. I specialize in troubleshooting
-    hardware, software, and network issues, and ensuring systems run smoothly and securely across
-    multiple environments.
-  </p>
+      <h3 class="text-3xl font-semibold text-green-300 mb-6 border-b border-gray-700 pb-2">About Me</h3>
 
-  <p>
-    With hands-on experience from roles at <strong>Avenue Healthcare</strong> and the
-    <strong>County Government of Nyeri</strong>, I’ve built strong expertise in system administration,
-    IT infrastructure support, and network security. I’m passionate about helping organizations maintain
-    reliable systems while strengthening their cybersecurity posture through proactive monitoring,
-    user training, and vulnerability assessments.
-  </p>
+      <div class="flex flex-col md:flex-row items-center gap-8">
+        <!-- Profile Photo -->
+        <img src="elvis.jpg" alt="Elvis Khaoya" 
+             class="w-40 h-40 rounded-full object-cover ring-4 ring-gray-700 shadow-lg" />
 
-  <p>
-    My technical background spans across <strong>Windows</strong>, <strong>Linux</strong>, and
-    <strong>macOS</strong> environments, with proficiency in tools such as <strong>Nmap</strong>,
-    <strong>Wireshark</strong>, <strong>Burp Suite</strong>, and <strong>Metasploit</strong>.
-    I’m also skilled in <strong>Python</strong>, <strong>Java</strong>, and <strong>PHP</strong>,
-    and have a strong foundation in cloud computing, virtualization, and Active Directory management.
-  </p>
+        <!-- Description -->
+        <div class="space-y-4 leading-relaxed text-green-300">
+          <p>
+            I’m <strong class="text-green-400">Elvis Wanyonyi Khaoya</strong>, a dedicated 
+            <strong class="text-green-400">IT Support Technician</strong> and 
+            <strong class="text-green-400">Cybersecurity Enthusiast</strong> based in Nairobi, Kenya. 
+            I specialize in troubleshooting hardware, software, and network issues, ensuring systems run 
+            smoothly and securely across multiple environments.
+          </p>
 
-  <p>
-    I hold a <strong>Bachelor of Science in Computer Science</strong> from St. Paul’s University,
-    graduating with Second Class Honors (Upper Division), and a <strong>Diploma in Computer Science</strong>
-    from the same institution. I’ve also completed certifications from Cisco and IBM covering
-    <strong>Networking</strong>, <strong>Cybersecurity</strong>, and <strong>Cloud Fundamentals</strong>.
-  </p>
+          <p>
+            With hands-on experience from roles at 
+            <strong class="text-green-400">Avenue Healthcare</strong> and the 
+            <strong class="text-green-400">County Government of Nyeri</strong>, 
+            I’ve built strong expertise in system administration, IT infrastructure support, 
+            and network security. I’m passionate about helping organizations maintain reliable systems 
+            while strengthening their cybersecurity posture through proactive monitoring, user training, 
+            and vulnerability assessments.
+          </p>
 
-  <p>
-    I thrive in fast-paced environments that challenge me to think critically, solve problems creatively,
-    and continuously learn new technologies. My mission is to combine my technical expertise and
-    cybersecurity awareness to make digital spaces safer and more reliable.
-  </p>
-</section>
+          <p>
+            My technical background spans across <strong class="text-green-400">Windows</strong>, 
+            <strong class="text-green-400">Linux</strong>, and <strong class="text-green-400">macOS</strong> 
+            environments, with proficiency in tools such as 
+            <strong class="text-green-400">Nmap</strong>, <strong class="text-green-400">Wireshark</strong>, 
+            <strong class="text-green-400">Burp Suite</strong>, and <strong class="text-green-400">Metasploit</strong>. 
+            I’m also skilled in <strong class="text-green-400">Python</strong>, 
+            <strong class="text-green-400">Java</strong>, and <strong class="text-green-300">PHP</strong>, 
+            with a strong foundation in cloud computing, virtualization, and Active Directory management.
+          </p>
 
+          <p>
+            I hold a <strong class="text-green-400">Bachelor of Science in Computer Science</strong> 
+            from St. Paul’s University, graduating with Second Class Honors (Upper Division), 
+            and a <strong class="text-green-300">Diploma in Computer Science</strong> from the same institution. 
+            I’ve also completed certifications from Cisco and IBM covering 
+            <strong class="text-green-400">Networking</strong>, <strong class="text-green-400">Cybersecurity</strong>, 
+            and <strong class="text-green-400">Cloud Fundamentals</strong>.
+          </p>
 
-       <!-- ===== EDUCATION SECTION ===== -->
-<section id="education">
-  <h3>Education</h3>
-  <div class="edu-container">
-    <div class="edu-item">
-      <h4>🎓 Bachelor of Science in Computer Science</h4>
-      <p class="edu-institution">St paul's University, 2021 – 2024</p>
-      <p class="edu-details">
-        Second class honors, upper division.<br><br>
-        Focused on cybersecurity, and network security. 
-        Developed strong foundations in ethical hacking and networking.
-      </p>
-    </div>
-    <div class="edu-item">
-      <h4>🎓 Diploma in Computer Science</h4>
-      <p class="edu-institution">St paul's University, 2020 – 2021</p>
-      <p class="edu-details">
-        Credit <br><br>
-        Gained hands-on experience in programming, system administration, and IT support.
-      </p>
+          <p>
+            I thrive in fast-paced environments that challenge me to think critically, solve problems 
+            creatively, and continuously learn new technologies. My mission is to combine my technical 
+            expertise and cybersecurity awareness to make digital spaces safer and more reliable.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== EDUCATION SECTION ===== -->
+<section id="education" class="bg-gray-900 text-gray-300 py-12 px-6">
+  <div class="max-w-5xl mx-auto">
+    <h3 class="text-3xl font-semibold text-green-400 mb-8 border-b border-gray-700 pb-2">
+      Education
+    </h3>
+
+    <div class="space-y-10">
+      <!-- Bachelor's Degree -->
+      <div class="bg-gray-800 p-6 rounded-xl shadow-md hover:shadow-lg hover:border-green-500 border border-transparent transition-all duration-300">
+        <h4 class="text-xl font-bold text-green-400 mb-2">🎓 Bachelor of Science in Computer Science</h4>
+        <p class="text-gray-400 italic mb-3">St. Paul’s University, 2021 – 2024</p>
+        <p class="leading-relaxed">
+          Second Class Honors, Upper Division.<br><br>
+          Focused on <span class="text-green-400 font-medium">Cybersecurity</span> and 
+          <span class="text-green-400 font-medium">Network Security</span>. 
+          Developed strong foundations in <span class="text-green-400 font-medium">Ethical Hacking</span> 
+          and networking.
+        </p>
+      </div>
+
+      <!-- Diploma -->
+      <div class="bg-gray-800 p-6 rounded-xl shadow-md hover:shadow-lg hover:border-green-500 border border-transparent transition-all duration-300">
+        <h4 class="text-xl font-bold text-green-400 mb-2">🎓 Diploma in Computer Science</h4>
+        <p class="text-gray-400 italic mb-3">St. Paul’s University, 2020 – 2021</p>
+        <p class="leading-relaxed">
+          Credit.<br><br>
+          Gained hands-on experience in <span class="text-green-400 font-medium">Programming</span>, 
+          <span class="text-green-400 font-medium">System Administration</span>, 
+          and <span class="text-green-400 font-medium">IT Support</span>.
+        </p>
+      </div>
     </div>
   </div>
 </section>
 
-                <!-- ===== CERTIFICATIONS SECTION ===== -->
-<section id="certifications">
-  <h3>Certifications/badges</h3>
-  <div class="cert-container">
-    <div class="cert-item">
-      <h4>📡 Networking Devices and Initial Configuration</h4>
-      <p>Issued by Cisco Networking Academy</p>
-      <a href="https://www.credly.com/badges/04d9bc63-2b1e-4169-9d70-b45645dfecc2/public_url" target="_blank" class="cert-link">View Certificate</a>
-    </div>
+<!-- ===== CERTIFICATIONS SECTION ===== -->
+<section id="certifications" class="bg-gray-900 text-gray-300 py-12 px-6">
+  <div class="max-w-6xl mx-auto">
+    <h3 class="text-3xl font-semibold text-green-400 mb-8 border-b border-gray-700 pb-2">
+      Certificates / Badges
+    </h3>
 
-    <div class="cert-item">
-      <h4>🔒 Introduction to Cybersecurity</h4>
-      <p>Issued by Cisco Networking Academy</p>
-      <a href="https://www.credly.com/badges/5a39cd1d-d972-4b4f-894d-48a1f6dfbd7a/public_url" target="_blank" class="cert-link">View Certificate</a>
-    </div>
+    <div class="grid gap-8 sm:grid-cols-2 lg:grid-cols-3">
+      <!-- Certification Card -->
+      <div class="bg-gray-800 p-6 rounded-xl shadow-md hover:shadow-lg hover:border-green-500 border border-transparent transition-all duration-300">
+        <h4 class="text-lg font-bold text-green-400 mb-2">📡 Networking Devices and Initial Configuration</h4>
+        <p class="text-gray-400 mb-3">Issued by Cisco Networking Academy</p>
+        <a href="https://www.credly.com/badges/04d9bc63-2b1e-4169-9d70-b45645dfecc2/public_url" 
+           target="_blank" 
+           class="inline-block text-sm text-green-400 hover:text-green-300 font-medium transition-colors">
+          View Certificate →
+        </a>
+      </div>
 
-    <div class="cert-item">
-      <h4>🧠 Network Support and Security</h4>
-      <p>Issued by Cisco Networking Academy</p>
-      <a href="https://www.credly.com/badges/1faf2c37-f7b3-4492-84c2-912641a94436/public_url" target="_blank" class="cert-link">View Certificate</a>
-    </div>
+      <div class="bg-gray-800 p-6 rounded-xl shadow-md hover:shadow-lg hover:border-green-500 border border-transparent transition-all duration-300">
+        <h4 class="text-lg font-bold text-green-400 mb-2">🔒 Introduction to Cybersecurity</h4>
+        <p class="text-gray-400 mb-3">Issued by Cisco Networking Academy</p>
+        <a href="https://www.credly.com/badges/5a39cd1d-d972-4b4f-894d-48a1f6dfbd7a/public_url" 
+           target="_blank" 
+           class="inline-block text-sm text-green-400 hover:text-green-300 font-medium transition-colors">
+          View Certificate →
+        </a>
+      </div>
 
-    <div class="cert-item">
-      <h4>💻 IT Fundamentals</h4>
-      <p>Issued by IBM SkillsBuild</p>
-      <a href="https://www.credly.com/badges/8a7abb02-5d7e-43a3-aaf4-05ebdabdee3b/public_url" target="_blank" class="cert-link">View Certificate</a>
-    </div>
+      <div class="bg-gray-800 p-6 rounded-xl shadow-md hover:shadow-lg hover:border-green-500 border border-transparent transition-all duration-300">
+        <h4 class="text-lg font-bold text-green-400 mb-2">🧠 Network Support and Security</h4>
+        <p class="text-gray-400 mb-3">Issued by Cisco Networking Academy</p>
+        <a href="https://www.credly.com/badges/1faf2c37-f7b3-4492-84c2-912641a94436/public_url" 
+           target="_blank" 
+           class="inline-block text-sm text-green-400 hover:text-green-300 font-medium transition-colors">
+          View Certificate →
+        </a>
+      </div>
+      
+        <div class="bg-gray-800 p-6 rounded-xl shadow-md hover:shadow-lg hover:border-green-500 border border-transparent transition-all duration-300">
+        <h4 class="text-lg font-bold text-green-400 mb-2">💻 IT Fundamentals</h4>
+        <p class="text-gray-400 mb-3">Issued by IBM SkillsBuild</p>
+        <a href="https://www.credly.com/badges/8a7abb02-5d7e-43a3-aaf4-05ebdabdee3b/public_url" 
+           target="_blank" 
+           class="inline-block text-sm text-green-400 hover:text-green-300 font-medium transition-colors">
+          View Certificate →
+        </a>
+      </div>
 
-    <div class="cert-item">
-      <h4>🕵️ Ethical Hacker</h4>
-      <p>Issued by Cisco Networking Academy</p>
-      <a href="https://www.credly.com/badges/7414267d-7862-47cb-a898-c1eafa0bed70/public_url" target="_blank" class="cert-link">View Certificate</a>
-    </div>
+      <div class="bg-gray-800 p-6 rounded-xl shadow-md hover:shadow-lg hover:border-green-500 border border-transparent transition-all duration-300">
+        <h4 class="text-lg font-bold text-green-400 mb-2">🕵️ Ethical Hacker</h4>
+        <p class="text-gray-400 mb-3">Issued by Cisco Networking Academy</p>
+        <a href="https://www.credly.com/badges/7414267d-7862-47cb-a898-c1eafa0bed70/public_url" 
+           target="_blank" 
+           class="inline-block text-sm text-green-400 hover:text-green-300 font-medium transition-colors">
+          View Certificate →
+        </a>
+      </div>
 
-    <div class="cert-item">
-      <h4>☁️ Cloud Computing Fundamentals</h4>
-      <p>Issued by IBM SkillsBuild</p>
-      <a href="https://www.credly.com/badges/bd37c3b0-7fba-4987-a1f3-eaa9d8a6136d/public_url" target="_blank" class="cert-link">View Certificate</a>
+      <div class="bg-gray-800 p-6 rounded-xl shadow-md hover:shadow-lg hover:border-green-500 border border-transparent transition-all duration-300">
+        <h4 class="text-lg font-bold text-green-400 mb-2">☁️ Cloud Computing Fundamentals</h4>
+        <p class="text-gray-400 mb-3">Issued by IBM SkillsBuild</p>
+        <a href="https://www.credly.com/badges/bd37c3b0-7fba-4987-a1f3-eaa9d8a6136d/public_url" 
+           target="_blank" 
+           class="inline-block text-sm text-green-400 hover:text-green-300 font-medium transition-colors">
+          View Certificate →
+        </a>
+      </div>
     </div>
   </div>
 </section>
 
 <!-- ===== SKILLS SECTION ===== -->
-<section id="skills">
-  <h3>Technical Skills</h3>
-  <div class="skills-container">
-    <div class="skill-category">
-      <h4>💻 IT support</h4>
-      <ul>
-        <li>Hardware and Software</li>
-        <li>Operating Systems</li>
-        <li>Networking</li>
-        <li>Troubleshooting</li>
-        <li>Cloud Computing & virtualization</li>
-        <li>Database Management</li>
-        <li>Backup and Recovery</li>
-        <li>User support: on & Remote</li>
-        <li>System administration</li>
-        <li>Security best practices</li>
-        <li>Programming: python, php, java</li>
-      </ul>
-    </div>
+<section id="skills" class="bg-gray-900 text-gray-300 py-12 px-6">
+  <div class="max-w-6xl mx-auto">
+    <h3 class="text-3xl font-semibold text-green-400 mb-8 border-b border-gray-700 pb-2">
+      Technical Skills
+    </h3>
 
-    <div class="skill-category">
-      <h4>🧠 Cybersecurity & Pentesting</h4>
-      <ul>
-        <li>Web Application Security</li>
-        <li>Network Scanning & Enumeration</li>
-        <li>Vulnerability Assessment</li>
-        <li>Report Writing</li>
-      </ul>
-    </div>
-</section>
+    <div class="grid gap-8 md:grid-cols-2">
+      
+      <!-- IT Support -->
+      <div class="bg-gray-800 p-6 rounded-xl shadow-md hover:shadow-lg hover:border-green-500 border border-transparent transition-all duration-300">
+        <h4 class="text-xl font-bold text-green-400 mb-4">💻 IT Support</h4>
+        <ul class="list-disc list-inside space-y-2 text-gray-300">
+          <li>Hardware and Software</li>
+          <li>Operating Systems</li>
+          <li>Networking</li>
+          <li>Troubleshooting</li>
+          <li>Cloud Computing & Virtualization</li>
+          <li>Database Management</li>
+          <li>Backup and Recovery</li>
+          <li>User Support: On-site & Remote</li>
+          <li>System Administration</li>
+          <li>Security Best Practices</li>
+          <li>Content management systems eg wordpress</li>
+          <li>Web design</li>
+          <li>Programming and scripting for automation <span class="text-green-400 font-medium">Bash</span>, <span class="text-green-400 font-medium">Python</span>, <span class="text-green-400 font-medium">powershell</span></li>
+        </ul>
+      </div>
 
+      <!-- Cybersecurity & Pentesting -->
+      <div class="bg-gray-800 p-6 rounded-xl shadow-md hover:shadow-lg hover:border-green-500 border border-transparent transition-all duration-300">
+        <h4 class="text-xl font-bold text-green-400 mb-4">🧠 Cybersecurity & Pentesting</h4>
+        <ul class="list-disc list-inside space-y-2 text-gray-300">
+          <li>Web Application Security</li>
+          <li>Network Scanning & Enumeration</li>
+          <li>Vulnerability Assessment</li>
+          <li>Report Writing</li>
+        </ul>
+      </div>
 
-<!-- ===== WORK EXPERIENCE SECTION ===== -->
-<section id="experience">
-  <h3>Work Experience</h3>
-  <div class="exp-container">
-    <div class="exp-item">
-      <h4>IT Intern</h4>
-      <p class="exp-org">Avenue Healthcare | June 2025 – Present</p>
-      <ul>
-        <li>IT technical support in Avenue healthcare clinics within or near Nairobi.</li>
-        <li>Hardware, software setup and troubleshooting( windows troubleshooter, CMD , Hardware diagnosis)</li>
-        <li>Installation, configuration and maintenance of hardware and software including Printer& scanner setup, installation, configuration and maintenance.</li>
-        <li>IT asset inventory</li>
-        <li>Networking- set up, configuring network devices, networking protocols(TCP/IP, SMB,HTTPS,SMTP,FTP,DNS,SSH,SSL), CCTV monitoring, network scanning and vulnerability scanning.</li> 
-        <li>Configuring VPNs, antivirus and firewalls</li>
-        <li>User management using active directory</li>
-        <li>Remote desktop support (Anydesk, Rustdesk)</li>
-        <li>Cybersecurity-vulnerability scanning, penetration testing using various tools(Nmap,wireshark,metasploit,setoolkit etc)</li>
-        <li>Cloud computing and virtualization( office 365, VMware)</li>
-        <li>Data backup and recovery.( onedrive, google drive)</li>
-        <li>Documentation and reporting.(word,excel,powerpoint,powerBI)</li>
-      </ul>
-    </div>
-
-    <div class="exp-item">
-      <h4>IT Intern</h4>
-      <p class="exp-org">County government of Nyeri | January 2024 – April 2024</p>
-      <ul>
-        <li>Hardware and Software installation(OS installation and other software)</li>
-        <li>Helpdesk support. assisting users who came with technical issues they could not fix.</li>
-        <li>Computer hardware(RAM installation, SSD and other computer peripherals)</li>
-        <li>Hardware and software troubleshooting(windows troubleshooter, Hardware diagnosis)</li>
-        <li>Active directory(Adding, deleting and managing domain users)</li>
-        <li>Network troubleshooting(ping, tracert etc..) and configuration(IPv4,DHCP,static IP etc)</li>
-        <li>setup, maintenance, troubleshooting and support</li> 
-        <li>support in various departments and government offices, hospitals.</li> 
-        <li>and configuration and updating antivirus database. Firewall configuration</li> 
-      </ul>
     </div>
   </div>
 </section>
 
-    
-        <section id="projects">
-             
-            <h3>Security Projects & Writeups</h3>
-            <ul>
-                <li>
+<!-- ===== PROJECTS SECTION ===== -->
+<section id="projects" class="bg-gray-900 text-gray-300 py-12 px-6">
+  <div class="max-w-5xl mx-auto">
+    <h3 class="text-3xl font-semibold text-green-400 mb-8 border-b border-gray-700 pb-2">
+      Security Projects & Writeups
+    </h3>
 
-                  <button class="collapsible">phishing awareness</button> 
-                  
-                    <div class="collapsible-content" style="display:none;">
-                        <h4>phishing-awareness-demo</h4>
-                        <p>A simple Flask web app that helps users identify phishing emails by analyzing suspicious patterns, links, and wording. The goal is to raise awareness about phishing tactics through an interactive demo.</p>
-                        <a href="https://github.com/Elvis-Khaoya/phishing-awareness-demo/blob/main/README.md" target="_blank">Read Writeup</a>
-                        <a href="https://phishing-awareness-demo-vz6j.onrender.com" target="">View live demo</a>
-                    </div>
+    <ul class="space-y-6">
+      <!-- Project 1 -->
+      <li class="bg-gray-800 rounded-xl shadow-md border border-transparent hover:border-green-500 transition-all duration-300">
+        <button class="collapsible w-full text-left px-6 py-4 text-lg font-semibold text-green-400 hover:text-green-300 focus:outline-none flex justify-between items-center">
+          <span>🎣 Phishing Awareness</span>
+          <span class="text-gray-400">+</span>
+        </button>
 
-                </li>
-                <li>
-                    <button class="collapsible">Incident response chatbot</button>
-                    <div class="collapsible-content" style="display:none;">
-                        <h4>Incident response chatbot</h4>
-                        <p>An interactive AI-powered chatbot built with Flask and Bootstrap that helps cybersecurity learners simulate real-world incident response scenarios. It provides intelligent guidance on threat analysis, containment, and recovery steps, making it an ideal educational tool for understanding how to handle cybersecurity incidents effectively.</p>
-                        <a href="https://github.com/Elvis-Khaoya/incident-response/blob/main/README.md" target="">Read Writeup</a>
-                        <a href="https://incident-response-vhbv.onrender.com" target="">View live demo</a>
-                    </div>
-                </li>
-                <!-- I will add projects as I build them -->
-            </ul>
-        </section>
+        <div class="collapsible-content hidden px-6 pb-6">
+          <h4 class="text-xl font-semibold text-white mb-2">Phishing Awareness Demo</h4>
+          <p class="text-gray-300 mb-4">
+            A simple Flask web app that helps users identify phishing emails by analyzing suspicious
+            patterns, links, and wording. The goal is to raise awareness about phishing tactics through
+            an interactive demo.
+          </p>
+          <div class="flex flex-wrap gap-4">
+            <a href="https://github.com/Elvis-Khaoya/phishing-awareness-demo/blob/main/README.md" target="_blank"
+               class="px-4 py-2 bg-green-600 hover:bg-green-500 rounded-md text-white text-sm font-medium transition">
+              Read Writeup
+            </a>
+            <a href="https://phishing-awareness-demo-vz6j.onrender.com" target="_blank"
+               class="px-4 py-2 bg-gray-700 hover:bg-green-500 hover:text-white rounded-md text-sm font-medium transition">
+              View Live Demo
+            </a>
+          </div>
+        </div>
+      </li>
 
-        
-    
-        <section id="tools">
-            
-            <h3>Tools I Use</h3>
-            <ul>
-                <li><strong>Burp Suite:</strong> Intercepting proxy for web vulnerability scanning.</li>
-                <li><strong>Nmap:</strong> Network scanner and port enumeration.</li>
-                <li><strong>Metasploit:</strong> Exploitation framework for penetration testing.</li>
-                <li><strong>Wireshark:</strong> Network protocol analyzer.</li>
-                <!-- Add more tools -->
-            </ul>
-        </section>
-        
-        <!-- ===== BLOG SECTION ===== -->
-<section id="blog">
-  <h3>My Blog</h3>
-  <div class="blog-container">
-    <article class="blog-post">
-      <h4 class="blog-title">Top 5 Tools Every Pentester Should Know</h4>
-      <p class="blog-date">Posted on October 5, 2025</p>
-      <p class="blog-snippet">
-        Penetration testing requires the right set of tools. Here are five essentials I use daily to uncover web application vulnerabilities...
-      </p>
-      <button class="read-more" onclick="toggleBlogContent(this)">Read More</button>
-      <div class="blog-full-content">
-        <p>
-          Tools like Burp Suite, Nmap, Metasploit, Wireshark, and Nikto form the foundation of a strong pentesting toolkit.
-          Each provides unique insight into application and network vulnerabilities. Learn to master them and your security
-          assessments will improve drastically.
-        </p>
-      </div>
-    </article>
+      <!-- Project 2 -->
+      <li class="bg-gray-800 rounded-xl shadow-md border border-transparent hover:border-green-500 transition-all duration-300">
+        <button class="collapsible w-full text-left px-6 py-4 text-lg font-semibold text-green-400 hover:text-green-300 focus:outline-none flex justify-between items-center">
+          <span>🤖 Incident Response Chatbot</span>
+          <span class="text-gray-400">+</span>
+        </button>
 
-    <article class="blog-post">
-      <h4 class="blog-title">My Journey into Ethical Hacking</h4>
-      <p class="blog-date">Posted on September 15, 2025</p>
-      <p class="blog-snippet">
-        Becoming an ethical hacker has been one of the most rewarding experiences of my career...
-      </p>
-      <button class="read-more" onclick="toggleBlogContent(this)">Read More</button>
-      <div class="blog-full-content">
-        <p>
-          From solving CTFs on HackTheBox to earning certifications like eJPT, my journey has been filled with constant learning.
-          I aim to inspire others to embrace ethical hacking as a means of protecting digital ecosystems.
-        </p>
-      </div>
-    </article>
+        <div class="collapsible-content hidden px-6 pb-6">
+          <h4 class="text-xl font-semibold text-white mb-2">Incident Response Chatbot</h4>
+          <p class="text-gray-300 mb-4">
+            An interactive AI-powered chatbot built with Flask and Bootstrap that helps cybersecurity
+            learners simulate real-world incident response scenarios. It provides intelligent guidance on
+            threat analysis, containment, and recovery steps, making it an ideal educational tool for
+            understanding how to handle cybersecurity incidents effectively.
+          </p>
+          <div class="flex flex-wrap gap-4">
+            <a href="https://github.com/Elvis-Khaoya/incident-response/blob/main/README.md" target="_blank"
+               class="px-4 py-2 bg-green-600 hover:bg-green-500 rounded-md text-white text-sm font-medium transition">
+              Read Writeup
+            </a>
+            <a href="https://incident-response-vhbv.onrender.com" target="_blank"
+               class="px-4 py-2 bg-gray-700 hover:bg-green-500 hover:text-white rounded-md text-sm font-medium transition">
+              View Live Demo
+            </a>
+          </div>
+        </div>
+      </li>
+    </ul>
   </div>
 </section>
 
-         
-        <section id="contact">
-            
-            <h3>Get in Touch</h3>
-            
+<!-- Collapsible Script -->
+<script>
+  const collapsibles = document.querySelectorAll('.collapsible');
+  collapsibles.forEach((btn) => {
+    btn.addEventListener('click', () => {
+      const content = btn.nextElementSibling;
+      const icon = btn.querySelector('span:last-child');
+      content.classList.toggle('hidden');
+      icon.textContent = content.classList.contains('hidden') ? '+' : '−';
+    });
+  });
+</script>
+ <!-- ===== CONTACT SECTION ===== -->
+<section id="contact" class="bg-gray-900 text-gray-300 py-12 px-6">
+  <div class="max-w-4xl mx-auto text-center">
+    <h3 class="text-3xl font-semibold text-green-400 mb-6 border-b border-gray-700 inline-block pb-2">
+      Get in Touch
+    </h3>
 
-            <!-- You can add more contact info below -->
-            <p>Email: <a href="mailto:elviskhaoya@gmail.com">elviskhaoya@gmail.com</a></p>
-            <p>LinkedIn: <a href="https://linkedin.com/in/Elvis Khaoya" target="www.linkedin.com/in/elvis-khaoya-805038379">Elvis Khaoya</a></p>
-            <p>GitHub: <a href="https://github.com/Elvis-Khaoya" target="https://github.com/Elvis-Khaoya">Elvis-Khaoya</a></p>
-            <p>Phone:0794306167</p>
-        </section>
-        
+    <p class="text-gray-400 mb-8">
+      I’m always open to opportunities, collaborations, and tech discussions. Feel free to reach out through any of the platforms below.
+    </p>
 
-    </main>
+    <div class="space-y-3 text-lg">
+      <p>
+        📧 Email:
+        <a href="mailto:elviskhaoya@gmail.com" class="text-green-400 hover:text-green-300 transition">
+          elviskhaoya@gmail.com
+        </a>
+      </p>
 
-    <footer>
-       Copyright &copy; <span id="year"></span> Elvis Khaoya
-    </footer>
-    <script src="script.js"></script>
+      <p>
+        💼 LinkedIn:
+        <a href="https://www.linkedin.com/in/elvis-khaoya-805038379" target="_blank"
+           class="text-green-400 hover:text-green-300 transition">
+          Elvis Khaoya
+        </a>
+      </p>
+
+      <p>
+        🧑‍💻 GitHub:
+        <a href="https://github.com/Elvis-Khaoya" target="_blank"
+           class="text-green-400 hover:text-green-300 transition">
+          github.com/Elvis-Khaoya
+        </a>
+      </p>
+
+      <p>📱 Phone: <span class="text-gray-200">0794306167</span></p>
+    </div>
+  </div>
+</section>
+
+
+
+<!-- ===== SCRIPT ===== -->
+<script>
+  // Automatically updates copyright year
+  document.getElementById("year").textContent = new Date().getFullYear();
+</script>
+
+
+
+   <script>  
+
+    const menuToggle = document.getElementById('menu-toggle');
+    const navLinks = document.getElementById('nav-links');
+
+    menuToggle.addEventListener('click', () => {
+      navLinks.classList.toggle('hidden');
+    });
+  </script>
+  </main>
+  <!-- ===== FOOTER ===== -->
+<footer class="bg-gray-950 text-gray-400 text-center py-6 border-t border-gray-800">
+  <p class="text-sm">
+    Copyright &copy; <span id="year"></span> 
+    <span class="text-green-400 font-medium">Elvis Khaoya</span> — All Rights Reserved.
+  </p>
+</footer>
 </body>
 </html>

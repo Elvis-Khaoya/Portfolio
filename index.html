@@ -46,6 +46,29 @@
       background: #0f172a;
       color: #cbd5f5;
     }
+    /* Dark mode background and text colors */
+body.dark-mode {
+  background-color: #121212 !important;
+  color: #e0e0e0 !important;
+}
+
+body.dark-mode a {
+  color: #4db5ff !important;
+}
+
+body.dark-mode .btn-outline-light {
+  color: #e0e0e0;
+  border-color: #e0e0e0;
+}
+
+body.dark-mode .btn-outline-light:hover {
+  background-color: #4db5ff;
+  color: #121212;
+}
+body.dark-mode .section-padding{
+  background-color: #121212;
+}
+
   </style>
 </head>
 
@@ -61,10 +84,15 @@
     <div class="collapse navbar-collapse" id="navbarNav">
       <ul class="navbar-nav ms-auto">
         <li class="nav-item"><a class="nav-link" href="#about">About</a></li>
+        <li class="nav-item"><a class="nav-link" href="#experience">experience</a></li>
         <li class="nav-item"><a class="nav-link" href="#projects">Projects</a></li>
         <li class="nav-item"><a class="nav-link" href="#certificates">Certificates</a></li>
         <li class="nav-item"><a class="nav-link" href="#skills">Skills</a></li>
-        <li class="nav-item"><a class="nav-link btn btn-info text-dark px-3 ms-2" href="#contact">Contact</a></li>
+        <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
+        
+        <!-- Dark Mode Toggle Button -->
+
+
       </ul>
     </div>
   </div>
@@ -100,7 +128,7 @@
   <div class="container">
     <div class="row align-items-center">
       <div class="col-lg-6 mb-4">
-        <h2 class="fw-bold mb-3">About Me</h2>
+        <h2 class="fw-bold mb-3 text-center">About Me</h2>
         <p class="text-muted">
           I’m <strong>Elvis Wanyonyi Khaoya</strong>, an IT Support Technician and Cybersecurity
           enthusiast based in Nairobi, Kenya.
@@ -124,6 +152,61 @@
     </div>
   </div>
 </section>
+
+<!-- ===== WORK EXPERIENCE SECTION ===== -->
+<section id="experience" class="section-padding bg-light py-12">
+  <div class="container">
+    <h2 class="fw-bold text-center mb-5 border-bottom border-primary pb-2">Work Experience</h2>
+
+    <div class="row g-4">
+
+      <!-- IT Intern | Avenue Healthcare -->
+      <div class="col-md-12">
+        <div class="card shadow-sm h-100 border-0">
+          <div class="card-body">
+            <h5 class="card-title">IT Intern</h5>
+            <p class="text-muted mb-3"><strong>Avenue Healthcare</strong> | June 2025 – December 2025</p>
+            <ul>
+              <li>Resolved hardware, software, and network issues across departments, minimizing downtime. Installed hardware, software, and set up devices like printers and scanners.</li>
+              <li>Set up and configured computers, software, VPNs, and user accounts for new staff.</li>
+              <li>Managed IT asset inventory, including devices, licenses, and assignments.</li>
+              <li>Maintained and troubleshot hardware and software including printers.</li>
+              <li>Performed regular network scans with Nmap and other tools for security auditing and service detection.</li>
+              <li>Provided cybersecurity awareness training to staff to prevent social engineering attacks.</li>
+              <li>Used Active Directory to add, delete, and manage users for authentication and access control.</li>
+              <li>Delivered remote helpdesk support using Remote Desktop tools to staff across multiple branches.</li>
+              <li>Assisted the system admin to monitor and maintain network infrastructure, including CCTV cameras across branches ensuring minimal downtime.</li>
+              <li>Supported various branches within/near Nairobi, e.g., Rongai, Garden City, Town Clinic, Kikuyu, Embakasi, Junction Mall, with IT issues ensuring smooth operations.</li>
+              <li>Assisted in cloud computing and virtualization deployment and operations.</li>
+              <li>Collaborated with the Head of Cybersecurity in network scanning, vulnerability scanning, and penetration testing to fix Avenue Healthcare website vulnerabilities and ensure systems were secure.</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <!-- IT Intern | County Government of Nyeri -->
+      <div class="col-md-12">
+        <div class="card shadow-sm h-100 border-0">
+          <div class="card-body">
+            <h5 class="card-title">IT Intern</h5>
+            <p class="text-muted mb-3"><strong>County Government of Nyeri</strong> | January 2024 – April 2024</p>
+            <ul>
+              <li>Provided technical support to staff across departments ensuring minimal downtime.</li>
+              <li>Installed, configured, and maintained computer systems, printers, and peripherals.</li>
+              <li>Assisted in the rollout and maintenance of government applications and systems.</li>
+              <li>Monitored network performance and conducted routine maintenance for reliability.</li>
+              <li>Delivered user training on IT tools, cybersecurity awareness, and troubleshooting.</li>
+              <li>Supported IT policy and security protocol implementation in line with standards.</li>
+              <li>Documented technical issues and solutions to improve service delivery.</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
 
 <!-- ===== PROJECTS ===== -->
 <section id="projects" class="section-padding bg-light">
@@ -334,6 +417,19 @@
 <script>
   document.getElementById("year").textContent = new Date().getFullYear();
 </script>
+<script>
+const toggleButton = document.getElementById('darkModeToggle');
+
+toggleButton.addEventListener('click', () => {
+  document.body.classList.toggle('dark-mode');
+  if(document.body.classList.contains('dark-mode')){
+    toggleButton.textContent = "☀️ Light Mode";
+  } else {
+    toggleButton.textContent = "🌙 Dark Mode";
+  }
+});
+</script>
+
 
 </body>
 </html>

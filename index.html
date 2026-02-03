@@ -69,6 +69,39 @@ body.dark-mode .section-padding{
   background-color: #121212;
 }
 
+/* ===== LAZY / SEQUENTIAL LOAD ANIMATIONS ===== */
+.reveal {
+  opacity: 0;
+  transform: translateY(40px);
+  transition: opacity 0.7s ease, transform 0.7s ease;
+}
+
+.reveal.active {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Staggered children animation */
+.reveal-stagger > * {
+  opacity: 0;
+  transform: translateY(30px);
+}
+
+.reveal-stagger.active > * {
+  opacity: 1;
+  transform: translateY(0);
+  transition: opacity 0.6s ease, transform 0.6s ease;
+}
+
+/* Delay each child */
+.reveal-stagger.active > *:nth-child(1) { transition-delay: 0.1s; }
+.reveal-stagger.active > *:nth-child(2) { transition-delay: 0.2s; }
+.reveal-stagger.active > *:nth-child(3) { transition-delay: 0.3s; }
+.reveal-stagger.active > *:nth-child(4) { transition-delay: 0.4s; }
+.reveal-stagger.active > *:nth-child(5) { transition-delay: 0.5s; }
+.reveal-stagger.active > *:nth-child(6) { transition-delay: 0.6s; }
+
+
   </style>
 </head>
 
@@ -99,13 +132,13 @@ body.dark-mode .section-padding{
 </nav>
 
 <!-- ===== HERO ===== -->
-<section class="hero text-center">
+<section class="hero text-center reveal">
   <div class="container">
     <img src="elvis.jpeg" alt="Elvis Khaoya"
       class="rounded-circle shadow mb-4"
       width="160" height="160">
 
-    <h1 class="fw-bold display-5">IT Support & Cybersecurity Professional</h1>
+    <h1 class="fw-bold display-5">IT Support specialist & Aspiring SOC Analyst</h1>
     <p class="lead mt-3">
       I help organizations secure systems, troubleshoot infrastructure, and build resilient IT environments.
     </p>
@@ -124,7 +157,7 @@ body.dark-mode .section-padding{
 </section>
 
 <!-- ===== ABOUT ===== -->
-<section id="about" class="section-padding">
+<section id="about" class="section-padding reveal">
   <div class="container">
     <div class="row align-items-center">
       <div class="col-lg-6 mb-4">
@@ -140,11 +173,14 @@ body.dark-mode .section-padding{
         <p class="text-muted">
           My focus is ensuring systems are reliable, secure, and optimized for users.
         </p>
+         <p class="text-muted">
+          My ultimate goal is to become a SOC Analyst after gaining more experience and a strong foundation in IT.
+        </p>
       </div>
       <div class="col-lg-6">
         <ul class="list-group shadow-sm">
           <li class="list-group-item"><i class="bi bi-check-circle text-info"></i> IT Support & System Administration</li>
-          <li class="list-group-item"><i class="bi bi-check-circle text-info"></i> Cybersecurity & Pentesting Basics</li>
+          <li class="list-group-item"><i class="bi bi-check-circle text-info"></i> Cybersecurity</li>
           <li class="list-group-item"><i class="bi bi-check-circle text-info"></i> Linux, Windows & Networking</li>
           <li class="list-group-item"><i class="bi bi-check-circle text-info"></i> Python, Bash & PowerShell Automation</li>
         </ul>
@@ -157,11 +193,11 @@ body.dark-mode .section-padding{
 
 
 <!-- ===== PROJECTS ===== -->
-<section id="projects" class="section-padding bg-light">
+<section id="projects" class="section-padding bg-light reveal">
   <div class="container">
     <h2 class="fw-bold text-center mb-5 border-bottom border-primary pb-2">Featured Projects</h2>
 
-    <div class="row g-4">
+    <div class="row g-4 reveal-stagger">
       <div class="col-md-6">
         <div class="card project-card h-100 shadow-sm">
           <div class="card-body">
@@ -193,11 +229,11 @@ body.dark-mode .section-padding{
 </section>
 
 <!-- ===== CERTIFICATES ===== -->
-<section id="certificates" class="section-padding bg-white">
+<section id="certificates" class="section-padding bg-white reveal">
   <div class="container">
     <h2 class="fw-bold text-center mb-5 border-bottom border-primary pb-2">Certificates & Badges</h2>
 
-    <div class="row g-4">
+    <div class="row g-4 reveal-stagger">
 
       <!-- Certificate 1 -->
       <div class="col-md-6 col-lg-4">
@@ -319,28 +355,27 @@ body.dark-mode .section-padding{
 
 
 <!-- ===== SKILLS ===== -->
-<section id="skills" class="section-padding">
-  <div class="container text-center">
+<section id="skills" class="section-padding reveal">
+  <div class="container text-center reveal-stagger">
     <h2 class="fw-bold mb-4 border-bottom border-primary pb-2">Technical Skills</h2>
 
     <div>
-      <span class="badge badge-skill">IT Support</span>
-      <span class="badge badge-skill">Cybersecurity</span>
-      <span class="badge badge-skill">Networking</span>
-      <span class="badge badge-skill">Linux</span>
-      <span class="badge badge-skill">Windows</span>
-      <span class="badge badge-skill">Python</span>
-      <span class="badge badge-skill">Bash</span>
-      <span class="badge badge-skill">PowerShell</span>
-      <span class="badge badge-skill">Nmap</span>
-      <span class="badge badge-skill">Wireshark</span>
-      <span class="badge badge-skill">Metasploit</span>
+      <span class="badge badge-skill">End-User & Helpdesk Support</span>
+      <span class="badge badge-skill">Systems, Access & Security</span>
+      <span class="badge badge-skill">Networking & Connectivity</span>
+      <span class="badge badge-skill">Hardware & Device Support</span>
+      <span class="badge badge-skill">Operating Systems & Platforms</span>
+      <span class="badge badge-skill">Audio-Visual & Collaboration Systems</span>
+      <span class="badge badge-skill">Asset & IT Operations Management</span>
+      <span class="badge badge-skill">Cloud, Virtualization & Emerging Tech</span>
+      <span class="badge badge-skill">Professional & Soft Skills</span>
+      
     </div>
   </div>
 </section>
 
 <!-- ===== CONTACT ===== -->
-<section id="contact" class="section-padding bg-dark text-light">
+<section id="contact" class="section-padding bg-dark text-light reveal">
   <div class="container text-center">
     <h2 class="fw-bold mb-3 border-bottom border-primary pb-2">Let’s Work Together</h2>
     <p class="mb-4">Open to IT support roles, cybersecurity opportunities, and collaborations.</p>
@@ -378,6 +413,25 @@ toggleButton.addEventListener('click', () => {
 });
 </script>
 
+<script>
+  const observer = new IntersectionObserver(
+    (entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add("active");
+          observer.unobserve(entry.target); // animate once
+        }
+      });
+    },
+    {
+      threshold: 0.15
+    }
+  );
+
+  document.querySelectorAll(".reveal, .reveal-stagger").forEach(el => {
+    observer.observe(el);
+  });
+</script>
 
 </body>
 </html>
